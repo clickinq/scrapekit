@@ -20,12 +20,12 @@ a tangle of `try`/`except`, `time.sleep`, and copy-pasted retry loops.
 so you can focus on the data. It wraps [`requests`](https://requests.readthedocs.io/)
 and transparently adds:
 
-- 🔁 **Automatic retries** with exponential backoff + jitter, honouring `Retry-After`.
-- 🐢 **Per-domain rate limiting** (fixed delay *or* token bucket) — be a good citizen by default.
-- 🔀 **Proxy pool** with concurrent health checks, round-robin/random rotation, cooldowns, and auto-removal of dead proxies.
-- 🎭 **User-agent & header rotation** from a built-in pool of realistic strings.
-- 🪝 **Hooks** for logging, metrics, caching, and custom parsing.
-- 🧩 A clean, `requests`-style API (`get`/`post`/...) with a `Config` dataclass and full type hints.
+- **Automatic retries** with exponential backoff + jitter, honouring `Retry-After`.
+- **Per-domain rate limiting** (fixed delay *or* token bucket) — be a good citizen by default.
+- **Proxy pool** with concurrent health checks, round-robin/random rotation, cooldowns, and auto-removal of dead proxies.
+- **User-agent & header rotation** from a built-in pool of realistic strings.
+- **Hooks** for logging, metrics, caching, and custom parsing.
+- A clean, `requests`-style API (`get`/`post`/...) with a `Config` dataclass and full type hints.
 
 > scrapekit is **general-purpose data-collection infrastructure**. It deliberately
 > does **not** include anything to target or defeat a specific site's bot
