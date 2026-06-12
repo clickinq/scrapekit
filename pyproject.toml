@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scrapekit"
+version = "0.1.0"
+description = "A resilient, well-behaved toolkit for web scraping: retries, rate limiting, proxy rotation, and header rotation around requests."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "scrapekit contributors" }]
+keywords = [
+    "scraping",
+    "web-scraping",
+    "requests",
+    "retry",
+    "rate-limiting",
+    "proxy",
+    "http",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = ["requests>=2.25"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "mypy>=1.0",
+    "types-requests",
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/scrapekit"
+Repository = "https://github.com/your-username/scrapekit"
+Issues = "https://github.com/your-username/scrapekit/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scrapekit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["scrapekit"]
+branch = true
+
+[tool.mypy]
+python_version = "3.10"
+packages = ["scrapekit"]
+strict = true
+warn_unused_ignores = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
